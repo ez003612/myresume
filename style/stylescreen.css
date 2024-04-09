@@ -1,0 +1,251 @@
+@media screen and (min-width: 821px) {
+
+    :root {
+        /* font */
+
+        --fontsize-1: 3rem;
+        --fontsize-2: 1.5rem;
+        --fontsize-3: 1rem;
+
+        /* boxsize in header */
+        /* --header-lineheight: 5rem; */
+        /* --logo-width: 20%; */
+        /* --menubuttom-width: 25%; */
+        /* --menulist-width: 40%; */
+        /* --menulist-minwidth: 35rem; */
+
+
+        /* size in article */
+        --star-wh: 30vw;
+        --triangle-wh: 30vw;
+        --circle-wh: 50vw;
+        --square-wh: 20vw;
+
+        --banner-height: 500px;
+        --photo-width: 35%;
+        --description-width: 50%;
+
+        --work-width: 100%;
+        --workimg-width: 10%;
+        --workdate-width: 30%;
+        --workcompany-width: 50%;
+
+        --grid-columns: repeat(5, 1fr);
+        --grid-rows: repeat(3, 200px);
+
+        --contactinfo-width: 40%;
+        --contactform-width: 50%;
+
+        /* color */
+        /* --header-bgcolor: #3B2F40;
+        --logo-bgcolor: #A68A91;
+        --logo-hover-bgcolor: #F2CED5;
+        --RWDmenu-bgcolor: #A68A91;
+        --menulist-bgcolor: #A68A91;
+        --menu-hover-bgcolor: #F2CED5;
+        --section1-bgcolor: #F2CED5;
+        --section2-bgcolor: #F29F8D;
+        --section3-bgcolor: #F2CED5;
+        --photo-bgcolor: #F27D72;
+        --description-bgcolor: #F27D72;
+        --skill-bgcolor: #F2CED5;
+        --item-bgcolor-1: #A68A91;
+        --item-bgcolor-2: #F27D72;
+        --footer-bgcolor: #3B2F40; */
+    }
+
+
+
+    .container {
+        max-width: 1200px;
+    }
+
+    /* banner區塊 */
+
+    .banner .circle {
+        top: -80%;
+        right: -10%;
+        animation: circleemove 10s ease infinite;
+    }
+
+    @keyframes circleemove {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.1);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .banner .triangle {
+        top: -50%;
+        left: 10%;
+        transform: rotate(-10deg);
+        animation: trianglemove 20s linear infinite;
+        /* visibility: hidden; */
+    }
+
+    @keyframes trianglemove {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        10% {
+            transform: rotate(45deg);
+        }
+
+        50% {
+            transform: rotate(180deg);
+        }
+
+        70% {
+            transform: rotate(270deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .banner .square {
+        bottom: -50%;
+        left: 0%;
+        animation: squaremove 10s ease infinite;
+    }
+
+    @keyframes squaremove {
+        0% {
+            transform: rotate(10deg);
+            border-radius: 50% 50% 50% 50%;
+        }
+
+        12.5% {
+            transform: rotate(100deg);
+            border-radius: 0 50% 50% 50%;
+        }
+
+        25% {
+            transform: rotate(190deg);
+            border-radius: 0 50% 50% 0;
+        }
+
+        37.5% {
+            transform: rotate(280deg);
+            border-radius: 0 50% 0 0;
+        }
+
+        50% {
+            transform: rotate(370deg);
+            border-radius: 0 0 0 0;
+        }
+
+        62.5% {
+            transform: rotate(460deg);
+            border-radius: 50% 0 0 0;
+        }
+
+        75% {
+            transform: rotate(550deg);
+            border-radius: 50% 0 0 50%;
+        }
+
+        87.5% {
+            transform: rotate(640deg);
+            border-radius: 50% 0 50% 50%;
+        }
+
+        100% {
+            transform: rotate(730deg);
+            border-radius: 50% 50% 50% 50%;
+        }
+
+
+    }
+
+
+    .banner .star {
+        transform: rotate(20deg);
+        animation: starmove 20s ease infinite;
+    }
+
+    @keyframes starmove {
+        0% {
+            right: -10%;
+            bottom: -50%;
+            opacity: 0.5;
+            transform: rotate(0deg);
+
+        }
+
+        25% {
+            right: 20%;
+            bottom: -20%;
+            opacity: 0.3;
+            transform: rotate(90deg);
+        }
+
+        50% {
+            right: 10%;
+            bottom: 30%;
+            opacity: 0.2;
+            transform: rotate(180deg);
+        }
+
+        75% {
+            right: -10%;
+            bottom: 30%;
+            opacity: 0.5;
+            transform: rotate(270deg);
+        }
+
+        100% {
+            right: -10%;
+            bottom: -50%;
+            opacity: 0.5;
+            transform: rotate(360deg);
+        }
+    }
+
+
+
+    /* Portfolios區塊 */
+    .card {
+        position: relative;
+        transform-style: preserve-3d;
+        /* transition: transform 500ms ease; */
+    }
+
+    .side {
+        position: absolute;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+        transition: transform 500ms ease;
+    }
+
+    .back {
+        display: flex;
+        background-color: #FFB2B2;
+        justify-content: center;
+        align-items: center;
+        transform: rotateY(180deg);
+        font-size: var(--fontsize-2);
+        transition: transform 500ms ease;
+    }
+
+    .card:hover .side {
+        transform: rotateX(0deg) rotateY(180deg);
+    }
+
+    .card:hover .back {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+
+
+}
